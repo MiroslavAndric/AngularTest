@@ -5,3 +5,19 @@
 <p (mouseover)="naMouseOver()">Na mouese over</p>
 
 <input type="text" placeholder="Dodaj tekst" (keyup)="naKeyUp(mojTekst.value)" #mojTekst/>
+
+<button (click)="liknuoNaDugme()">Dugme</button>
+
+<input type="number" [placeholder]="prviPlaceholder" [disabled]="isDisabled">
+
+<input type="text" [value]="ime" (keyup)="promeniIme(imeProm.value)" #imeProm/>
+
+<input type="text" [(ngModel)]="drugaPromenljiva"/>
+<p>{{drugaPromenljiva}}</p>
+
+<div *ngIf="isLoggedIn">
+    <h1>Logovan korisnik uspesno</h1>
+</div>
+<div *ngIf="!isLoggedIn">
+    <h1>Nije logovan korisnik</h1>
+</div>

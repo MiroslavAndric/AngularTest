@@ -10,11 +10,23 @@ export class PrvaKomponentaComponent implements OnInit {
   i = 0;
   mojBroj = 1000;
   istina = true;
+  prviPlaceholder = 'Placeholder prvog inputa'
+  isDisabled = true;
+  ime = 'moje ime';
+  isLoggedIn = false;
+  drugaPromenljiva= 'Pocetna vrednost';
+  private mojDrugiBroj = 2000;
   constructor() {
     console.log('Ovo je moja prva komponenta')
   }
 
   ngOnInit(): void {
+    setTimeout(() =>{
+      this.naslov = 'Novi naslov' + this.mojDrugiBroj;
+      this.prviPlaceholder = 'Place holder na srpskom'
+      this.isDisabled = false;
+      this.isLoggedIn = true;
+    }, 2000)
     console.log('on init')
     setInterval(()=> {
       // this.naslov += this.i++
@@ -25,6 +37,13 @@ export class PrvaKomponentaComponent implements OnInit {
   }
   naMouseOver(): void {
     console.log("na mouse over")
+  }
+  liknuoNaDugme(): void {
+    console.log('kliknuo na dugme')
+  }
+  promeniIme(vrednost: string): void {
+    console.log(vrednost)
+    this.ime = vrednost;
   }
 }
 
